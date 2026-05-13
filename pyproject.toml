@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 61.0"]
+requires = ["setuptools >= 61.0", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +9,7 @@ authors = [
     {name = "Peter Stangl", email = "peter.stangl@cern.ch"},
 ]
 description = "Package providing Renormalization Group Evolution Matrices for the WET in the flavio basis"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 readme = "README.md"
 dependencies = [
@@ -21,8 +21,8 @@ dynamic = ["version"]
 where = ["src/"]
 include = ["rgevolve.wet.flavio"]
 
-[tool.setuptools.dynamic]
-version = {attr = "rgevolve.wet.flavio._version.__version__"}
+[tool.setuptools_scm]
+version_file = "src/rgevolve/wet/flavio/_version.py"
 
 [tool.setuptools.package-data]
 "rgevolve.wet.flavio" = ["data.h5"]
